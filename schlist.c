@@ -45,11 +45,14 @@ void push(scheduler **sch_head, int type, float time){
 			if(new_event->time > aux->time){
 				pointer = aux;
 				aux = aux->next;
+                printf("estoy buscando mi lugar\n");
 			}
 			else{
 				pointer->next = new_event;
 				new_event->next = aux;
 				flag = 1;
+                printf("ya encontre mi lugar\n");
+                aux = NULL;
 			}
 		}
 
