@@ -3,6 +3,7 @@
 #include "lcgrand.h"
 #include "schlist.h"
 #include "timevents.h"
+#include "files.h"
 
 #define INPUT_A 1
 #define INPUT_B 2
@@ -35,6 +36,7 @@ int main(void){
     push(&sch_head, INPUT_A, inputcalc(0, ROW_A), 1);
     push(&sch_head, INPUT_B, inputcalc(0, ROW_B), 1);
     
+    initfile();
     
     while (time < MAXTIME) {
         attending = pop(&sch_head);
