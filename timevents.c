@@ -11,7 +11,6 @@
 #define ROW_A 20
 #define ROW_B 30
 
-#define MAXTIME 2000
 
 /*inputcalc calculate the time of the next arrival of the type */
 

@@ -9,10 +9,10 @@
 #define ROW_A 20
 #define ROW_B 30
 
-#define MAXTIME 2000
 
 typedef struct node{
-	int type;
+	int number;
+    int type;
 	float time;
 	struct node *next;
 } scheduler;
@@ -21,7 +21,7 @@ typedef struct node{
 
 /*add a new event to the scheduler*/
 
-void push(scheduler **sch_head, int type, float time){
+void push(scheduler **sch_head, int type, float time, int number){
 
 	int flag = 0;
 	
@@ -31,6 +31,7 @@ void push(scheduler **sch_head, int type, float time){
 	scheduler *new_event = malloc(sizeof(scheduler));
 	new_event->type = type;
 	new_event->time = time;
+    new_event->number = number;
 
 	/*locate the new node where it's belongs considerating the time*/
 
@@ -79,7 +80,7 @@ void print_everything(scheduler **sch_head){
     int i = 0;
     while (aux != NULL){
         i++;
-        printf("estoy imprimiendo el elemento %d del scheduler, del tipo %d y con tiempo %f\n", i, aux->type, aux->time);
+        printf("%d en scheduler, del tipo %d y con tiempo %f correspondiente a la entrada %d \n", i, aux->type, aux->time, aux->number);
         aux = aux->next;
     }
 }
