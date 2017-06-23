@@ -67,7 +67,8 @@ void print_everything(scheduler **sch_head){
     int i = 0;
     while (aux != NULL){
         i++;
-        printf("estoy imprimiendo el elemento %d del scheduler, del tipo %d y con tiempo %f", i, aux->type, aux->time);
+        printf("estoy imprimiendo el elemento %d del scheduler, del tipo %d y con tiempo %f\n", i, aux->type, aux->time);
+        aux = aux->next;
     }
 }
 
