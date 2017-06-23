@@ -36,6 +36,8 @@ void push(scheduler **sch_head, int type, float time){
 
 	scheduler *aux = *sch_head;
 	scheduler *pointer = NULL;
+    
+    int i = 0;
 
 	if(aux == NULL){
 		new_event->next = *sch_head;
@@ -43,16 +45,23 @@ void push(scheduler **sch_head, int type, float time){
 	}else{
 		while(aux != NULL){
 			if(new_event->time > aux->time){
+                i = i + 1;
 				pointer = aux;
 				aux = aux->next;
-                printf("estoy buscando mi lugar\n");
+                continue;
 			}
 			else{
-				pointer->next = new_event;
-				new_event->next = aux;
-				flag = 1;
-                printf("ya encontre mi lugar\n");
-                aux = NULL;
+                if(i == 0){
+                    new_event->next = aux;
+                    *sch_head = new_event;
+                    flag = 1;
+                    break;
+                }else{
+                    pointer->next = new_event;
+                    new_event->next = aux;
+                    flag = 1;
+                    break;
+                }
 			}
 		}
 
