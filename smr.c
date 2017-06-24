@@ -37,14 +37,14 @@ int main(void){
     push(&sch_head, INPUT_B, inputcalc(0, ROW_B), 1);
     
     initfile();
+    //log_update(time, &sch_head, &row_A, &row_B);
     
     while (time < MAXTIME) {
+        log_update(time, &sch_head, &row_A, &row_B);
         attending = pop(&sch_head);
         time = attending->time;
-        
         printf("CURRENT TIME: %f \n", time);
-        
-        print_everything(&sch_head);
+        //log_update(time, &sch_head, &row_A, &row_B);
         
         switch (attending->type){
             case INPUT_A:

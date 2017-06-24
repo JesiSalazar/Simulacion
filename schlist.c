@@ -75,17 +75,6 @@ void push(scheduler **sch_head, int type, float time, int number){
 }
 
 
-void print_everything(scheduler **sch_head){
-    scheduler *aux = *sch_head;
-    int i = 0;
-    while (aux != NULL){
-        i++;
-        printf("%d en scheduler, del tipo %d y con tiempo %f correspondiente a la entrada %d \n", i, aux->type, aux->time, aux->number);
-        aux = aux->next;
-    }
-}
-
-
 /*get the nearest event to be processed*/
 
 
