@@ -12,7 +12,7 @@
 
 typedef struct node{
 	int number;
-    int type;
+        int type;
 	float time;
 	struct node *next;
 } scheduler;
@@ -31,7 +31,7 @@ void push(scheduler **sch_head, int type, float time, int number){
 	scheduler *new_event = malloc(sizeof(scheduler));
 	new_event->type = type;
 	new_event->time = time;
-    new_event->number = number;
+    	new_event->number = number;
 
 	/*locate the new node where it's belongs considerating the time*/
 
